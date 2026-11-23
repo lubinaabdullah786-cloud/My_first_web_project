@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LifeSync - Personal Organizer</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <h2 class="logo">🌿 LifeSync</h2>
+
+        <nav>
+            <a href="#dashboard" class="active">🏠 Dashboard</a>
+            <a href="#tasks">📋 My Tasks</a>
+            <a href="#habits">🔄 Habits</a>
+            <a href="#goals">🎯 Goals</a>
+            <a href="#exam">📚 Exam Countdown</a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <p>Organize your life.</p>
+            <p>Grow every day ✨</p>
+        </div>
+
+    </aside>
+
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Header -->
+        <header class="top-header">
+
+            <div>
+                <h1 id="greeting">Welcome!</h1>
+                <p id="currentDate"></p>
+            </div>
+
+            <div class="profile">
+                <span>👤</span>
+                <span>My Dashboard</span>
+            </div>
+
+        </header>
+
+
+        <!-- Dashboard -->
+        <section id="dashboard">
+
+            <div class="welcome-card">
+
+                <h2>Your day, your goals, your growth.</h2>
+
+                <p>
+                    Small steps every day create big changes.
+                    Let's make today productive!
+                </p>
+
+            </div>
+
+
+            <!-- Statistics -->
+            <div class="stats-grid">
+
+                <div class="stat-card">
+                    <span>📋</span>
+                    <h3 id="totalTasks">0</h3>
+                    <p>Total Tasks</p>
+                </div>
+
+                <div class="stat-card">
+                    <span>✅</span>
+                    <h3 id="completedTasks">0</h3>
+                    <p>Completed Tasks</p>
+                </div>
+
+                <div class="stat-card">
+                    <span>🎯</span>
+                    <h3 id="totalGoals">0</h3>
+                    <p>My Goals</p>
+                </div>
+
+                <div class="stat-card">
+                    <span>🔥</span>
+                    <h3 id="completedHabits">0</h3>
+                    <p>Habits Completed</p>
+                </div>
+
+            </div>
+
+
+            <!-- Life Balance -->
+            <div class="section-card balance-section">
+
+                <h2>🌈 My Life Balance</h2>
+
+                <p>
+                    Track how you spend your day across
+                    different areas of your life.
+                </p>
+
+                <div class="balance-grid">
+
+                    <label class="balance-item">
+                        <input type="checkbox" class="balance-check">
+                        <span>📚 Study</span>
+                    </label>
+
+                    <label class="balance-item">
+                        <input type="checkbox" class="balance-check">
+                        <span>💪 Health</span>
+                    </label>
+
+                    <label class="balance-item">
+                        <input type="checkbox" class="balance-check">
+                        <span>🎨 Hobbies</span>
+                    </label>
+
+                    <label class="balance-item">
+                        <input type="checkbox" class="balance-check">
+                        <span>👨‍👩‍👧 Personal Life</span>
+                    </label>
+
+                </div>
+
+                <div class="score-area">
+
+                    <div class="score-circle">
+                        <span id="balanceScore">0%</span>
+                    </div>
+
+                    <p id="balanceMessage">
+                        Start your day by completing activities.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Tasks -->
+            <section class="section-card" id="tasks">
+
+                <div class="section-header">
+                    <h2>📋 My Tasks</h2>
+                </div>
+
+                <form id="taskForm" class="task-form">
+
+                    <input
+                        type="text"
+                        id="taskName"
+                        placeholder="What do you need to do?"
+                        required
+                    >
+
+                    <select id="taskCategory">
+
+                        <option value="Study">📚 Study</option>
+                        <option value="Personal">👤 Personal</option>
+                        <option value="Health">💪 Health</option>
+                        <option value="Hobby">🎨 Hobby</option>
+
+                    </select>
+
+                    <select id="taskPriority">
+
+                        <option value="Low">Low Priority</option>
+                        <option value="Medium" selected>Medium Priority</option>
+                        <option value="High">High Priority</option>
+
+                    </select>
+
+                    <input
+                        type="date"
+                        id="taskDate"
+                    >
+
+                    <button type="submit">+ Add Task</button>
+
+                </form>
+
+                <div id="taskList"></div>
+
+            </section>
+
+
+            <!-- Habits -->
+            <section class="section-card" id="habits">
+
+                <h2>🔄 Daily Habits</h2>
+
+                <p>Complete your small daily habits.</p>
+
+                <div id="habitList" class="habit-grid"></div>
+
+            </section>
+
+
+            <!-- Goals -->
+            <section class="section-card" id="goals">
+
+                <h2>🎯 My Goals</h2>
+
+                <form id="goalForm" class="goal-form">
+
+                    <input
+                        type="text"
+                        id="goalName"
+                        placeholder="Enter your goal"
+                        required
+                    >
+
+                    <button type="submit">Add Goal</button>
+
+                </form>
+
+                <div id="goalList"></div>
+
+            </section>
+
+
+            <!-- Exam Countdown -->
+            <section class="section-card" id="exam">
+
+                <h2>📚 Exam Countdown</h2>
+
+                <form id="examForm" class="exam-form">
+
+                    <input
+                        type="text"
+                        id="examName"
+                        placeholder="Exam name"
+                        required
+                    >
+
+                    <input
+                        type="date"
+                        id="examDate"
+                        required
+                    >
+
+                    <button type="submit">Save Exam</button>
+
+                </form>
+
+                <div id="examDisplay"></div>
+
+            </section>
+
+        </section>
+
+
+        <!-- Footer -->
+        <footer>
+
+            <p>
+                LifeSync | Make every day count 🌱
+            </p>
+
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
